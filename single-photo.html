@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/lightgallery-bundle.min.css">
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.ico" />
+    <title>Страница фото</title>
+</head>
+
+<body>
+    <header class="bg-white border-bottom fixed-top">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light flex-nowrap px-0">
+                <a class="navbar-brand" href="#">
+                    <img class="d-block mx-auto" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="48" height="48">
+                </a>
+                <form class="form-inline flex-grow-1">
+                    <div class="input-group flex-grow-1 mr-2">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-primary" type="button" id="searchButton" data-toggle="tooltip"
+                                data-placement="bottom" title="">Поиск по имени фото</button>
+                        </div>
+                        <input type="text" class="form-control" id="search" placeholder="Поиск"
+                            aria-label="Поиск фотографий" aria-describedby="searchButton">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary type=" button" id="advancedSearch" data-toggle="tooltip"
+                                data-placement="bottom" title="">Поиск
+                                по свойствам фото</button>
+                        </div>
+                    </div>
+                </form>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Войти</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                John Doe
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="user-page.html">Моя страница</a>
+                                <a class="dropdown-item" href="admin.html">Админстраница</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Выйти</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="albums">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item all-albums"><a href="all-albums.html"
+                            class="d-inline-block text-decoration-none text-black-50 px-2 pt-2 pb-3">Все альбомы</a>
+                    </li>
+                    <li class="list-inline-item"><a href="albums/album2.html"
+                            class="d-inline-block text-decoration-none text-black-50 px-2 pt-2 pb-3">Album2</a></li>
+                    <li class="list-inline-item"><a href="albums/album3.html"
+                            class="d-inline-block text-decoration-none text-black-50 px-2 pt-2 pb-3">Album3</a></li>
+                    <li class="list-inline-item"><a href="albums/album1.html"
+                            class="d-inline-block text-decoration-none text-black-50 px-2 pt-2 pb-3">Album1</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="py-5">
+        <div class="container" id="single-photo">
+            <h1 class="pt-0 pt-lg-4 pb-4 font-weight-bold">New York</h1>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="medium-zoom-demo">
+                        <figure lg-background-color="#f8f9fa" class="blog-images" data-src="images/new-york-medium.jpg"
+                            data-lg-size="1920-2880">
+                            <img class="img-fluid" src="images/new-york-medium.jpg" />
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <p class="d-flex align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">Имя</span><span id="photoName">New York</span>
+                    </p>
+                    <p class="d-flex align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">Дата и время</span><span id="photoDateTime">12.12.2021
+                            10:10</span>
+                    </p>
+                    <p class="d-flex align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">Место</span><span id="photoPlace">New York</span>
+                    </p>
+                    <p class="d-flex align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">Модель камеры</span><span id="photoCamera">Canon, EOS
+                            R5</span>
+                    </p>
+                    <p class="d-flex align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">Фокусное расстояние объектива</span><span
+                            id="photoLensFocalLength">15.0mm</span>
+                    </p>
+                    <p class="d-flex align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">Диафрагма</span><span id="photoDiaphragm">f/3.5</span>
+                    </p>
+                    <p class="d-flex align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">Скорость затвора</span><span
+                            id="photoShutterSpeed">1/400</span>
+                    </p>
+                    <p class="d-flex align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">ISO</span><span id="photoISO">100</span>
+                    </p>
+                    <p class="d-flex align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">Вспышка</span><span id="photoFlash">auto</span>
+                    </p>
+                    <p class="d-flex flex-wrap align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">Альбомы</span><a href="#"
+                            class="mr-3">Album3</a><a href="#" class="mr-3">Album1</a><a href="#"
+                            class="mr-3">Album2</a><a href="#" class="mr-3">Album3</a><a href="#"
+                            class="mr-3">Album1</a><a href="#" class="mr-3">Album2</a><a href="#"
+                            class="mr-3">Album3</a><a href="#" class="mr-3">Album1</a><a href="#"
+                            class="mr-3">Album2</a><a href="#" class="mr-3">Album3</a><a href="#"
+                            class="mr-3">Album1</a><a href="#" class="mr-3">Album2</a><a href="#"
+                            class="mr-3">Album3</a>
+                    </p>
+                    <div class="d-flex flex-column flex-lg-row flex-wrap my-3">
+                        <button type="button" class="btn btn-primary mb-2 mr-lg-2" id="photoPropertiesEdit"
+                            data-toggle="modal" data-target="#photoPropertiesModal">
+                            Редактировать свойства
+                        </button>
+                        <div class="modal fade" id="photoPropertiesModal" tabindex="-1"
+                            aria-labelledby="photoPropertiesModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="photoPropertiesModalLabel">Свойства фото</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="photoPropertiesName">Имя</label>
+                                            <input type="text" class="form-control"
+                                                id="photoPropertiesName" placeholder="New York">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="photoPropertiesDateTime">Дата и время</label>
+                                            <input type="text" class="form-control"
+                                                id="photoPropertiesDateTime" placeholder="12.12.2021 10:10">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="photoPropertiesPlace">Место</label>
+                                            <input type="text" class="form-control"
+                                                id="photoPropertiesPlace" placeholder="New York">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="photoPropertiesCamera">Модель камеры</label>
+                                            <input type="text" class="form-control"
+                                                id="photoPropertiesCamera" placeholder="Canon, EOS R5">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="photoPropertiesLensFocalLength">Фокусное расстояние
+                                                объектива</label>
+                                            <input type="text" class="form-control"
+                                                id="photoPropertiesLensFocalLength" placeholder="15.0mm">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="photoPropertiesDiaphragm">Диафрагма</label>
+                                            <input type="text" class="form-control"
+                                                id="photoPropertiesDiaphragm" placeholder="f/3.5">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="photoPropertiesShutterSpeed">Скорость затвора</label>
+                                            <input type="text" class="form-control"
+                                                id="photoPropertiesShutterSpeed" placeholder="1/400">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="photoPropertiesISO">ISO</label>
+                                            <input type="text" class="form-control"
+                                                id="photoPropertiesISO" placeholder="100">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="photoPropertiesFlash">Вспышка</label>
+                                            <input type="text" class="form-control"
+                                                id="photoPropertiesFlash" placeholder="auto">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                            id="photoPropertiesUpdate">Сохранить и закрыть</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-danger mb-2 mr-lg-2" id="photoDelete" data-toggle="modal"
+                            data-target="#photoDeleteModal">Удалить фото</button>
+                        <div class="modal fade" id="photoDeleteModal" tabindex="-1"
+                            aria-labelledby="photoDeleteModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="photoDeleteModalLabel">Вы действительно хотите
+                                            полностью удалить
+                                            фото? <small class="d-block text-danger">После удаления его уже нельзя
+                                                восстановить</small></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <button type="button" class="btn btn-danger mr-2" data-dismiss="modal"
+                                            id="photoDeleteConfirm">Да</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                            id="photoDeleteCancel">Нет</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary mb-2 mr-lg-2" id="photoAddToAlbum" data-toggle="modal"
+                            data-target="#photoAddToAlbumModal">Добавить в
+                            альбом</button>
+                        <div class="modal fade" id="photoAddToAlbumModal" tabindex="-1"
+                            aria-labelledby="photoAddToAlbumModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <form class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="photoAddToAlbumModalLabel">Выберите альбом в который
+                                            вы хотите добавить
+                                            фото?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="photoAddToAlbumSelect">Альбомы</label>
+                                            <select multiple class="form-control" id="photoAddToAlbumSelect" size="10">
+                                                <option>Album 1</option>
+                                                <option>Album 2</option>
+                                                <option>Album 3</option>
+                                                <option>Album 4</option>
+                                                <option disabled>Album 5</option>
+                                                <option disabled>Album 6</option>
+                                                <option disabled>Album 7</option>
+                                                <option>Album 8</option>
+                                                <option>Album 9</option>
+                                                <option>Album 10</option>
+                                                <option>Album 11</option>
+                                                <option>Album 12</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" data-dismiss="modal"
+                                            id="photoAddToAlbumConfirm">Сохранить и закрыть</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button class="btn photo-like"><i class="bi bi-hand-thumbs-up"></i></button><span
+                            class="badge badge-pill badge-dark mr-3">152</span>
+                        <button class="btn photo-dislike"><i class="bi bi-hand-thumbs-down"></i></button><span
+                            class="badge badge-pill badge-dark">56</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="py-5">
+        <div class="container">
+            <hr>
+            FOOTER
+        </div>
+    </footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/lightgallery.min.js"></script>
+    <script src="js/lg-medium-zoom.min.js"></script>
+    <script>
+        lightGallery(document.querySelector('.medium-zoom-demo'), {
+            // Target all images
+            selector: '.blog-images',
+            // Add medium zoom plugin
+            plugins: [lgMediumZoom],
+        });
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

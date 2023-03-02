@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/lightgallery-bundle.min.css">
+    <link rel="stylesheet" href="css/justifiedGallery.min.css">
+    <link type="text/css" rel="stylesheet" href="css/image-uploader.min.css">
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.ico" />
+    <title>Страница альбома</title>
+</head>
+
+<body>
+    <header class="bg-white border-bottom fixed-top">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light flex-nowrap px-0">
+                <a class="navbar-brand" href="#">
+                    <img class="d-block mx-auto" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="48" height="48">
+                </a>
+                <form class="form-inline flex-grow-1">
+                    <div class="input-group flex-grow-1 mr-2">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-primary" type="button" id="searchButton" data-toggle="tooltip"
+                                data-placement="bottom" title="">Поиск по имени фото</button>
+                        </div>
+                        <input type="text" class="form-control" id="search" placeholder="Поиск"
+                            aria-label="Поиск фотографий" aria-describedby="searchButton">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary type=" button" id="advancedSearch" data-toggle="tooltip"
+                                data-placement="bottom" title="">Поиск
+                                по свойствам фото</button>
+                        </div>
+                    </div>
+                </form>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Войти</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                John Doe
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="user-page.html">Моя страница</a>
+                                <a class="dropdown-item" href="admin.html">Админстраница</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Выйти</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="albums">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item all-albums"><a href="all-albums.html"
+                            class="d-inline-block text-decoration-none text-black-50 px-2 pt-2 pb-3">Все альбомы</a>
+                    </li>
+                    <li class="list-inline-item"><a href="albums/album2.html"
+                            class="d-inline-block text-decoration-none text-black-50 px-2 pt-2 pb-3">Album2</a></li>
+                    <li class="list-inline-item"><a href="albums/album3.html"
+                            class="d-inline-block text-decoration-none text-black-50 px-2 pt-2 pb-3">Album3</a></li>
+                    <li class="list-inline-item active"><a href="albums/single-album.html"
+                            class="d-inline-block text-decoration-none text-black-50 px-2 pt-2 pb-3">New York</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container single-album pt-5 mb-3">
+            <h1 class="pt-0 pt-lg-4 pb-4 font-weight-bold" id="albumTitle">New York</h1>
+            <div class="row">
+                <div class="col-sm">
+                    <p id="albumDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="d-flex flex-column flex-lg-row flex-wrap my-3">
+                        <button type="button" class="btn btn-primary mb-2 mr-lg-2" id="albumDescriptionEdit"
+                            data-toggle="modal" data-target="#albumDescriptionModal">
+                            Редактировать описание
+                        </button>
+                        <div class="modal fade" id="albumDescriptionModal" tabindex="-1"
+                            aria-labelledby="albumDescriptionModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="albumDescriptionModalLabel">Описание</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="albumDescriptionTitle">Заголовок</label>
+                                            <input type="text" class="form-control"
+                                                id="albumDescriptionTitle">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="albumDescriptionText">Описание</label>
+                                            <textarea class="form-control" id="albumDescriptionText"
+                                                rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                            id="albumDescriptionUpdate">Сохранить и закрыть</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-danger mb-2 mr-lg-2" id="albumDelete" data-toggle="modal"
+                            data-target="#albumDeleteModal">Удалить альбом</button>
+                        <div class="modal fade" id="albumDeleteModal" tabindex="-1"
+                            aria-labelledby="albumDeleteModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="albumDeleteModalLabel">Вы действительно хотите
+                                            удалить
+                                            альбом? <small class="d-block text-danger">После удаления его уже нельзя
+                                                восстановить</small></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <button type="button" class="btn btn-danger mr-2" data-dismiss="modal"
+                                            id="albumDeleteConfirm">Да</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                            id="albumDeleteCancel">Нет</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary mr-lg-2">Получить
+                            ссылку альбома</button>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <p class="d-flex align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">Автор</span><span id="albumCreator">John Doe</span>
+                    </p>
+                    <p class="d-flex align-items-center">
+                        <span class="badge badge-pill badge-dark mr-3">Количество фото</span><span id="albumPhotoCount">117</span>
+                    </p>
+                    <p class="d-flex flex-column align-items-start">
+                        <span class="badge badge-pill badge-dark mr-3 mb-3">Миниатюра</span><span id="albumThumbnail">
+                            <img class="img-fluid" src="images/new-york-thumbnail.jpg" alt="new-york"></span>
+                    </p>
+                    <form method="POST" name="updateThumbnailForAlbum" id="updateThumbnailForAlbum"
+                        enctype="multipart/form-data">
+                        <div class="input-field mb-3">
+                            <div class="update-thumbnail-for-album"></div>
+                        </div>
+                        <button class="btn btn-primary mb-3">Обновить
+                            миниатюру</button>
+                    </form>
+                </div>
+            </div>
+            <form method="POST" name="addPhotosToAlbum" id="addPhotosToAlbum" enctype="multipart/form-data">
+                <div class="input-field mb-3">
+                    <div class="add-photos-to-album"></div>
+                </div>
+                <button class="btn btn-primary">Добавить фото</button>
+            </form>
+        </div>
+        <div class="pb-5 mt-3">
+            <div class="gallery-container" id="single-album-thumbnails-gallery">
+                <a data-lg-size="1600-1067" class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="
+                    <div class='d-flex flex-column flex-lg-row'>
+                        <div class='col-sm d-flex flex-wrap align-items-center'>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Имя</span><span class='photo-name mr-4'>New York</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Дата и время</span><span class='photo-date-time mr-4'>12.12.2021
+                                        10:10</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Место</span><span class='photo-place mr-4'>New York</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Модель камеры</span><span class='photo-camera mr-4'>Canon, EOS
+                                        R5</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Фокусное расстояние объектива</span><span
+                                        class='photo-lens-focal-length mr-4'>15.0mm</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Диафрагма</span><span class='photo-diaphragm mr-4'>f/3.5</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Скорость затвора</span><span
+                                        class='photo-shutter-speed mr-4'>1/400</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>ISO</span><span class='photo-iso mr-4'>100</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Вспышка</span><span class='photo-flash mr-4'>auto</span>
+                                </div>
+                        </div>
+                        <div class='col-sm'>
+                            <div class='d-flex flex-column flex-sm-row align-items-center'>
+                                <a href='images/new-york.jpg' class='btn btn-sm text-white' target='_blank'>Открыть фото в новой вкладке</a>
+                                <a href='single-photo.html' class='btn btn-sm text-white'>Перейти на страницу фото</a>
+                            </div>
+                            <div class='d-flex align-items-center'>
+                                <button type='button' class='btn btn-sm photo-like text-white'><i class='bi bi-hand-thumbs-up'></i></button><span class='badge badge-pill badge-dark mr-2'>152</span>
+                                <button type='button' class='btn btn-sm photo-dislike text-white'><i class='bi bi-hand-thumbs-down'></i></button><span class='badge badge-pill badge-dark mr-2'>56</span>
+                                <button type='button' class='btn btn-sm text-white' id='photoDelete' data-toggle='modal'
+                                data-target='#photoDeleteModal' title='Удалить'><i class='bi bi-trash'></i></button>
+                                <button type='button' class='btn btn-sm text-white' id='photoAddToAlbum' data-toggle='modal'
+                                data-target='#photoAddToAlbumModal' title='Добавить себе в альбом'><i class='bi bi-plus-lg'></i></button>
+                            </div>
+                        </div>
+                    </div>">
+                    <img alt="" class="img-responsive"
+                        src="https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it2" data-tweet-text="lightGallery slide  2"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1608481337062-4093bf3ed404?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@therawhunter' >Massimiliano Morosinotto </a></h4><p> Location - <a href='https://unsplash.com/s/photos/tre-cime-di-lavaredo%2C-italia'>Tre Cime di Lavaredo, Italia</a>This is the Way</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1608481337062-4093bf3ed404?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1605973029521-8154da591bd7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@thesaboo' >Sascha Bosshard </a></h4><p> Location - <a href='https://unsplash.com/s/photos/pizol%2C-mels%2C-schweiz'>Pizol, Mels, Schweiz</a></p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1605973029521-8154da591bd7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2398" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1526281216101-e55f00f0db7a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@yusufevli' >Yusuf Evli </a></h4><p> Foggy Road</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1526281216101-e55f00f0db7a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@flovayn' >Jay Mantri</a></h4><p>  Misty shroud over a forest</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1505820013142-f86a3439c5b2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@flovayn' >Florian van Duyn</a></h4><p>Location - <a href='Bled, Slovenia'>Bled, Slovenia</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1505820013142-f86a3439c5b2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1126" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@juanster' >Juan Davila</a></h4><p>Location - <a href='Bled, Slovenia'>Bled, Slovenia</a> Wooded lake island </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1063" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@davidmarcu' >David Marcu</a></h4><p>Location - <a href='https://unsplash.com/s/photos/ciuca%C8%99-peak%2C-romania'>Ciucaș Peak, Romania</a> Alone in the unspoilt wilderness </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1585338447937-7082f8fc763d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@whoisbenjamin' >whoisbenjamin</a></h4>
+                        <p>Location - <a href='https://unsplash.com/s/photos/ciuca%C8%99-peak%2C-romania'>Snowdonia National Park, Blaenau Ffestiniog, UK</a> 
+                        A swan on a calm misty lake in the mountains of Snowdonia, North Wales. <a href='https://unsplash.com/photos/9V6EkAoTWJM'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1585338447937-7082f8fc763d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1144" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1476842384041-a57a4f124e2e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@aaronburden' >Aaron Burden</a></h4><p>Location - <a href='https://unsplash.com/s/photos/grayling%2C-michigan%2C-united-states'>Grayling, Michigan, United States</a> Colorful trees near a lake. <a href='https://unsplash.com/photos/00QWN1J0g48'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1476842384041-a57a4f124e2e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1465311530779-5241f5a29892?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@kalenemsley' >Kalen Emsley</a></h4><p>Location - <a href='https://unsplash.com/s/photos/yukon-territory%2C-canada'>Yukon Territory, Canada</a> No captions. <a href='https://unsplash.com/photos/eHpYD4U5830'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1465311530779-5241f5a29892?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1461301214746-1e109215d6d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@kace' >Kace Rodriguez</a></h4><p>Location - <a href='https://unsplash.com/s/photos/pfeiffer-beach%2C-united-states'>Pfeiffer Beach, United States</a> Pfeiffer Beach at Dusk. <a href='https://unsplash.com/photos/eHpYD4U5830'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1461301214746-1e109215d6d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1610448721566-47369c768e70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@patwhelen' >Pat Whelen</a></h4><p>Location - <a href='https://unsplash.com/s/photos/portsea-vic%2C-australia'>Portsea VIC, Australia</a> No caption <a href='https://unsplash.com/photos/EKLXDQ-dDRg'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1610448721566-47369c768e70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@derekthomson' >Derek Thomson</a></h4><p>Location - <a href='https://unsplash.com/s/photos/mcway-falls%2C-united-states'>McWay Falls, United States</a> No caption <a href='https://unsplash.com/photos/TWoL-QCZubY'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1539678050869-2b97c7c359fd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@michaljaneck' >Michal Janek</a></h4><p>Location - <a href='https://unsplash.com/s/photos/big-sur%2C-united-states'>Big Sur, United States</a> Coast  </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1539678050869-2b97c7c359fd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1446630073557-fca43d580fbe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@papillon' >Iris Papillon</a></h4><p>Location - <a href='https://unsplash.com/s/photos/big-sur%2C-united-states'>Big Sur, United States</a> Big Sur drive  </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1446630073557-fca43d580fbe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1065" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1596370743446-6a7ef43a36f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@piyushh_dubeyy' >piyush dubey</a></h4><p>Published on August 2, 2020</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1596370743446-6a7ef43a36f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2134" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1464852045489-bccb7d17fe39?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@fynn_it' >fynn</a></h4><p>Location - <a href='https://unsplash.com/s/photos/big-sur%2C-united-states'>Big Sur, United States</a> Wasserauen, Appenzell Innerrhoden, Schweiz  </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1464852045489-bccb7d17fe39?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1060" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@danielleone' >Daniel Leone</a></h4><p>Location - <a href='https://unsplash.com/s/photos/poon-hill%2C-ghode-pani%2C-nepal'>Poon Hill, Ghode Pani, Nepal</a> Taken from the top of Poon Hill before sun rise </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1037" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1510011560141-62c7e8fc7908?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@bboba' >Boba Jovanovic</a></h4><p>Location - <a href='https://unsplash.com/s/photos/bay-of-kotor'>Bay of Kotor</a> Boka kotorska bay </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1510011560141-62c7e8fc7908?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-899" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1586276393635-5ecd8a851acc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@svsdesigns' >Surendra Vikram Singh</a></h4><p>Location - <a href='https://unsplash.com/s/photos/lachung%2C-sikkim%2C-india'>Lachung, Sikkim, India</a> Cloud covered mountain </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1586276393635-5ecd8a851acc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1471931452361-f5ff1faa15ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2252&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@camadams' >Cam Adams</a></h4><p>Location - <a href='https://unsplash.com/s/photos/banff%2C-canada'>Banff, Canada</a> Lake along jagged mountains</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1471931452361-f5ff1faa15ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1536-2304" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1508766206392-8bd5cf550d1c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1536&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@rea_le' >Andrea Ledda</a></h4><p>Location - <a href='https://unsplash.com/s/photos/lago-goillet%2C-italy'>Lago Goillet, Italy</a>  Goillet Lake at 2561 meters above Breuil-Cervinia</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1508766206392-8bd5cf550d1c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="
+                    <div class='d-flex flex-column flex-lg-row'>
+                        <div class='col-sm d-flex flex-wrap align-items-center'>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Имя</span><span class='photo-name mr-4'>New York</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Дата и время</span><span class='photo-date-time mr-4'>12.12.2021
+                                        10:10</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Место</span><span class='photo-place mr-4'>New York</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Модель камеры</span><span class='photo-camera mr-4'>Canon, EOS
+                                        R5</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Фокусное расстояние объектива</span><span
+                                        class='photo-lens-focal-length mr-4'>15.0mm</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Диафрагма</span><span class='photo-diaphragm mr-4'>f/3.5</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Скорость затвора</span><span
+                                        class='photo-shutter-speed mr-4'>1/400</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>ISO</span><span class='photo-iso mr-4'>100</span>
+                                </div>
+                                <div class='d-flex align-items-center'>
+                                    <span class='badge badge-pill badge-dark mr-2'>Вспышка</span><span class='photo-flash mr-4'>auto</span>
+                                </div>
+                        </div>
+                        <div class='col-sm'>
+                            <div class='d-flex flex-column flex-sm-row align-items-center'>
+                                <a href='images/new-york.jpg' class='btn btn-sm text-white' target='_blank'>Открыть фото в новой вкладке</a>
+                                <a href='single-photo.html' class='btn btn-sm text-white'>Перейти на страницу фото</a>
+                            </div>
+                            <div class='d-flex align-items-center'>
+                                <button type='button' class='btn btn-sm photo-like text-white'><i class='bi bi-hand-thumbs-up'></i></button><span class='badge badge-pill badge-dark mr-2'>152</span>
+                                <button type='button' class='btn btn-sm photo-dislike text-white'><i class='bi bi-hand-thumbs-down'></i></button><span class='badge badge-pill badge-dark mr-2'>56</span>
+                                <button type='button' class='btn btn-sm text-white' id='photoDelete' data-toggle='modal'
+                                data-target='#photoDeleteModal' title='Удалить'><i class='bi bi-trash'></i></button>
+                                <button type='button' class='btn btn-sm text-white' id='photoAddToAlbum' data-toggle='modal'
+                                data-target='#photoAddToAlbumModal' title='Добавить себе в альбом'><i class='bi bi-plus-lg'></i></button>
+                            </div>
+                        </div>
+                    </div>">
+                    <img alt="" class="img-responsive"
+                        src="https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it2" data-tweet-text="lightGallery slide  2"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1608481337062-4093bf3ed404?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@therawhunter' >Massimiliano Morosinotto </a></h4><p> Location - <a href='https://unsplash.com/s/photos/tre-cime-di-lavaredo%2C-italia'>Tre Cime di Lavaredo, Italia</a>This is the Way</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1608481337062-4093bf3ed404?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1605973029521-8154da591bd7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@thesaboo' >Sascha Bosshard </a></h4><p> Location - <a href='https://unsplash.com/s/photos/pizol%2C-mels%2C-schweiz'>Pizol, Mels, Schweiz</a></p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1605973029521-8154da591bd7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2398" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1526281216101-e55f00f0db7a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@yusufevli' >Yusuf Evli </a></h4><p> Foggy Road</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1526281216101-e55f00f0db7a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@flovayn' >Jay Mantri</a></h4><p>  Misty shroud over a forest</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1505820013142-f86a3439c5b2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@flovayn' >Florian van Duyn</a></h4><p>Location - <a href='Bled, Slovenia'>Bled, Slovenia</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1505820013142-f86a3439c5b2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1126" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@juanster' >Juan Davila</a></h4><p>Location - <a href='Bled, Slovenia'>Bled, Slovenia</a> Wooded lake island </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1063" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@davidmarcu' >David Marcu</a></h4><p>Location - <a href='https://unsplash.com/s/photos/ciuca%C8%99-peak%2C-romania'>Ciucaș Peak, Romania</a> Alone in the unspoilt wilderness </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1585338447937-7082f8fc763d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@whoisbenjamin' >whoisbenjamin</a></h4>
+                    <p>Location - <a href='https://unsplash.com/s/photos/ciuca%C8%99-peak%2C-romania'>Snowdonia National Park, Blaenau Ffestiniog, UK</a> 
+                    A swan on a calm misty lake in the mountains of Snowdonia, North Wales. <a href='https://unsplash.com/photos/9V6EkAoTWJM'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1585338447937-7082f8fc763d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1144" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1476842384041-a57a4f124e2e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@aaronburden' >Aaron Burden</a></h4><p>Location - <a href='https://unsplash.com/s/photos/grayling%2C-michigan%2C-united-states'>Grayling, Michigan, United States</a> Colorful trees near a lake. <a href='https://unsplash.com/photos/00QWN1J0g48'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1476842384041-a57a4f124e2e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1465311530779-5241f5a29892?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@kalenemsley' >Kalen Emsley</a></h4><p>Location - <a href='https://unsplash.com/s/photos/yukon-territory%2C-canada'>Yukon Territory, Canada</a> No captions. <a href='https://unsplash.com/photos/eHpYD4U5830'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1465311530779-5241f5a29892?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1461301214746-1e109215d6d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@kace' >Kace Rodriguez</a></h4><p>Location - <a href='https://unsplash.com/s/photos/pfeiffer-beach%2C-united-states'>Pfeiffer Beach, United States</a> Pfeiffer Beach at Dusk. <a href='https://unsplash.com/photos/eHpYD4U5830'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1461301214746-1e109215d6d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1610448721566-47369c768e70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@patwhelen' >Pat Whelen</a></h4><p>Location - <a href='https://unsplash.com/s/photos/portsea-vic%2C-australia'>Portsea VIC, Australia</a> No caption <a href='https://unsplash.com/photos/EKLXDQ-dDRg'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1610448721566-47369c768e70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@derekthomson' >Derek Thomson</a></h4><p>Location - <a href='https://unsplash.com/s/photos/mcway-falls%2C-united-states'>McWay Falls, United States</a> No caption <a href='https://unsplash.com/photos/TWoL-QCZubY'>Link</a> </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1539678050869-2b97c7c359fd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@michaljaneck' >Michal Janek</a></h4><p>Location - <a href='https://unsplash.com/s/photos/big-sur%2C-united-states'>Big Sur, United States</a> Coast  </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1539678050869-2b97c7c359fd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2400" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1446630073557-fca43d580fbe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@papillon' >Iris Papillon</a></h4><p>Location - <a href='https://unsplash.com/s/photos/big-sur%2C-united-states'>Big Sur, United States</a> Big Sur drive  </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1446630073557-fca43d580fbe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1065" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1596370743446-6a7ef43a36f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@piyushh_dubeyy' >piyush dubey</a></h4><p>Published on August 2, 2020</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1596370743446-6a7ef43a36f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-2134" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1464852045489-bccb7d17fe39?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@fynn_it' >fynn</a></h4><p>Location - <a href='https://unsplash.com/s/photos/big-sur%2C-united-states'>Big Sur, United States</a> Wasserauen, Appenzell Innerrhoden, Schweiz  </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1464852045489-bccb7d17fe39?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1060" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@danielleone' >Daniel Leone</a></h4><p>Location - <a href='https://unsplash.com/s/photos/poon-hill%2C-ghode-pani%2C-nepal'>Poon Hill, Ghode Pani, Nepal</a> Taken from the top of Poon Hill before sun rise </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1037" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1510011560141-62c7e8fc7908?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@bboba' >Boba Jovanovic</a></h4><p>Location - <a href='https://unsplash.com/s/photos/bay-of-kotor'>Bay of Kotor</a> Boka kotorska bay </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1510011560141-62c7e8fc7908?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-899" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1586276393635-5ecd8a851acc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@svsdesigns' >Surendra Vikram Singh</a></h4><p>Location - <a href='https://unsplash.com/s/photos/lachung%2C-sikkim%2C-india'>Lachung, Sikkim, India</a> Cloud covered mountain </p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1586276393635-5ecd8a851acc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1600-1067" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1471931452361-f5ff1faa15ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2252&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@camadams' >Cam Adams</a></h4><p>Location - <a href='https://unsplash.com/s/photos/banff%2C-canada'>Banff, Canada</a> Lake along jagged mountains</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1471931452361-f5ff1faa15ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+                <a data-lg-size="1536-2304" data-pinterest-text="Pin it3" data-tweet-text="lightGallery slide  4"
+                    class="gallery-item"
+                    data-src="https://images.unsplash.com/photo-1508766206392-8bd5cf550d1c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1536&q=80"
+                    data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@rea_le' >Andrea Ledda</a></h4><p>Location - <a href='https://unsplash.com/s/photos/lago-goillet%2C-italy'>Lago Goillet, Italy</a>  Goillet Lake at 2561 meters above Breuil-Cervinia</p>">
+                    <img class="img-responsive"
+                        src="https://images.unsplash.com/photo-1508766206392-8bd5cf550d1c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+                </a>
+            </div>            
+        </div>
+    </main>
+    <footer class="py-5">
+        <div class="container">
+            <hr>
+            FOOTER
+        </div>
+    </footer>
+    <div class="modal fade" id="photoDeleteModal" tabindex="-1" aria-labelledby="photoDeleteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="photoDeleteModalLabel">Вы действительно хотите
+                        удалить
+                        фото?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <button type="submit" class="btn btn-danger mr-2" data-dismiss="modal"
+                        id="photoDeleteConfirm">Да</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="photoDeleteCancel">Нет</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal fade" id="photoAddToAlbumModal" tabindex="-1" aria-labelledby="photoAddToAlbumModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="photoAddToAlbumModalLabel">Выберите альбом в который
+                        вы хотите добавить
+                        фото?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="photoAddToAlbumSelect">Альбомы</label>
+                        <select multiple class="form-control" id="photoAddToAlbumSelect" size="10">
+                            <option>Album 1</option>
+                            <option>Album 2</option>
+                            <option>Album 3</option>
+                            <option>Album 4</option>
+                            <option disabled>Album 5</option>
+                            <option disabled>Album 6</option>
+                            <option disabled>Album 7</option>
+                            <option>Album 8</option>
+                            <option>Album 9</option>
+                            <option>Album 10</option>
+                            <option>Album 11</option>
+                            <option>Album 12</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal"
+                        id="photoAddToAlbumConfirm">Сохранить и закрыть</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/lightgallery.min.js"></script>
+    <script src="js/lg-thumbnail.min.js"></script>
+    <script src="js/lg-zoom.min.js"></script>
+    <script src="js/jquery.justifiedGallery.min.js"></script>
+    <script type="text/javascript" src="js/image-uploader.min.js"></script>
+    <script>
+        jQuery("#single-album-thumbnails-gallery")
+            .justifiedGallery({
+                captions: true,
+                rowHeight: 180,
+                margins: 5
+            })
+            .on("jg.complete", function () {
+                window.lightGallery(
+                    document.getElementById("single-album-thumbnails-gallery"),
+                    {
+                        autoplayFirstVideo: false,
+                        pager: false,
+                        galleryId: "new-york",
+                        plugins: [lgZoom, lgThumbnail],
+                        mobileSettings: {
+                            controls: false,
+                            showCloseIcon: false,
+                            download: false,
+                            rotate: false
+                        }
+                    }
+                );
+            });
+    </script>
+    <script>
+        $('.add-photos-to-album').imageUploader({
+            maxSize: 2 * 1024 * 1024,
+            mimes: ['image/jpeg']
+        });
+        $('.update-thumbnail-for-album').imageUploader({
+            maxFiles: 1,
+            maxSize: 2 * 1024 * 1024,
+            mimes: ['image/jpeg']
+        });
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
